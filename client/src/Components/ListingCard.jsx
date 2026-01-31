@@ -62,7 +62,7 @@ const ListingCard = ({listing}) => {
             <div className='flex items-center justify-between'>
                 <div>
   <span className="text-lg font-semibold text-slate-800">
-   {currency} {listing.price.toLocaleString()}
+   {currency}  {listing.price.toLocaleString()}
   </span>
 </div>
 

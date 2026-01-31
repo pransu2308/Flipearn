@@ -1,6 +1,7 @@
 import React from 'react'
+import {PricingTable} from '@clerk/clerk-react'
 
-const plans = () => {
+const Plans = () => {
   return (
     <div className='max-w-2xl mx-auto z-20 my-30 max-md:px-4'>
         <div className='text-center'>
@@ -9,12 +10,12 @@ const plans = () => {
             </h2>
             <p className='text-grat-500 text-sm max-w-md mx-auto'>Start for free and scale up as you grow . Find the perfect plan for your content creation needs.</p>
         </div>
-        <div>
-            
+        <div className='mt-14'>
+          <PricingTable/>
         </div>
-      
-    </div>
+        </div>
+
   )
 }
 
-export default plans
+export default Plans
