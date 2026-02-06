@@ -10,11 +10,20 @@ import Loading from './Pages/Loading'
 import Messages from './Pages/Messages'
 import Navbar from './Components/navBar'
 import ChatBox from './Components/ChatBox'
+import {Toaster} from 'react-hot-toast'
+import Layout from './Pages/Admin/Layout'
+import Dashboard from './Pages/Admin/Dashboard'
+import AllListings from './Pages/Admin/AllListings'
+import CredentialChange from './Pages/Admin/CredentialChange'
+import CredentialVerify from './Pages/Admin/CredentialVerify'
+import Transactions from './Pages/Admin/Transactions'
+import Withdrawal from './Pages/Admin/Withdrawal'
 
 const App = () => {
   const {pathname}=useLocation()
   return (
     <div>
+      <Toaster />
       {!pathname.includes('/admin') && <Navbar / >}
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -26,6 +35,16 @@ const App = () => {
         <Route path='/messages' element={<Messages/>}/>
         <Route path='/my-orders' element={<MyOrders/>}/>
         <Route path='/loading' element={<Loading/>}/>
+        <Route path='/admin' element={<Layout />}>
+          <Route index element={<Dashboard/>} />
+          <Route path='verify-credentials' element={<CredentialVerify/>} />
+          <Route path='change-credentials' element={<CredentialChange/>} />
+          <Route path='list-listings' element={<AllListings/>} />
+          <Route path='transactions' element={<Transactions/>} />
+          <Route path='withdrawal' element={<Withdrawal/>} />
+
+
+        </Route>
       </Routes>
       <ChatBox/>
     </div>
